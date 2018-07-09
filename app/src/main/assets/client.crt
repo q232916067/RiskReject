@@ -1,0 +1,59 @@
+Certificate:
+    Data:
+        Version: 1 (0x0)
+        Serial Number: 64206 (0xface)
+    Signature Algorithm: md5WithRSAEncryption
+        Issuer: C=CN, ST=Shanghai, L=Shanghai, O=soul, OU=tech, CN=soulapp.cn/emailAddress=ming@soulapp.cn
+        Validity
+            Not Before: May  8 09:13:42 2018 GMT
+            Not After : May  8 09:13:42 2019 GMT
+        Subject: C=CN, ST=Shanghai, O=soul, OU=tech, L=Shanghai, CN=soulapp.cn/emailAddress=ming@soulapp.cn
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (1024 bit)
+                Modulus:
+                    00:b7:79:d4:06:2f:83:21:d3:fa:96:38:7f:03:e4:
+                    41:8f:f2:85:d7:fd:9a:1d:79:08:f7:45:b5:b6:dc:
+                    08:bf:5e:76:95:63:1c:d4:50:f5:05:e0:a2:68:0b:
+                    71:27:a4:db:21:82:af:de:7a:84:a9:1d:f1:73:9e:
+                    d6:13:41:b9:6b:c5:25:0a:c3:6c:3e:f0:90:93:6c:
+                    cc:3f:a5:e5:5c:7a:ca:02:47:eb:49:4f:a9:8e:f0:
+                    d3:97:f0:6d:9d:f9:74:36:83:23:f7:86:5a:63:e2:
+                    dd:d4:e9:d7:54:7d:93:77:d7:bd:a6:72:1c:bf:9d:
+                    50:4a:3b:36:6c:40:b3:28:dd
+                Exponent: 65537 (0x10001)
+    Signature Algorithm: md5WithRSAEncryption
+         48:18:0a:9e:f8:74:82:58:5c:28:e6:91:f3:c4:e0:77:12:de:
+         83:4a:89:4d:79:31:1c:53:4a:de:51:d0:68:00:07:0b:8e:5e:
+         a5:ec:c7:25:bf:4f:49:ae:c2:7a:ee:1d:c6:76:d8:bc:c9:b1:
+         04:a8:2d:50:3b:d8:ef:04:77:63:21:97:f1:57:1e:40:33:4c:
+         7a:36:36:b7:81:22:c9:82:d2:86:b2:f6:d0:d7:4c:c2:b9:ed:
+         21:34:d5:95:7f:be:4e:47:8b:17:1b:f6:d3:53:c9:67:c6:a8:
+         fd:08:5e:b0:68:3b:c9:74:2e:d1:14:1e:d6:36:9c:39:0d:1a:
+         00:8f:35:c7:55:ee:f6:2b:e9:d3:6f:05:74:e3:f0:aa:d5:62:
+         5e:ee:5f:b5:68:a1:ba:c1:26:40:53:5a:42:1c:de:ac:0c:44:
+         08:28:c8:e0:ee:de:59:02:f7:d2:dd:0f:fc:d4:44:03:71:d8:
+         ff:8c:6e:81:8d:18:1e:52:13:2b:ad:4c:fd:f5:e8:1d:06:0b:
+         da:4c:f0:82:5d:10:72:fc:54:f6:c3:7a:99:fe:c6:63:a9:6d:
+         cf:77:24:3e:27:1c:89:0f:3c:ce:8f:a0:07:cd:f4:34:b2:ab:
+         23:99:1c:09:08:c2:3b:80:c2:14:be:b0:af:21:6e:db:88:30:
+         dd:a7:14:c8
+-----BEGIN CERTIFICATE-----
+MIIDADCCAegCAwD6zjANBgkqhkiG9w0BAQQFADCBhjELMAkGA1UEBhMCQ04xETAP
+BgNVBAgMCFNoYW5naGFpMREwDwYDVQQHDAhTaGFuZ2hhaTENMAsGA1UECgwEc291
+bDENMAsGA1UECwwEdGVjaDETMBEGA1UEAwwKc291bGFwcC5jbjEeMBwGCSqGSIb3
+DQEJARYPbWluZ0Bzb3VsYXBwLmNuMB4XDTE4MDUwODA5MTM0MloXDTE5MDUwODA5
+MTM0MlowgYYxCzAJBgNVBAYTAkNOMREwDwYDVQQIDAhTaGFuZ2hhaTENMAsGA1UE
+CgwEc291bDENMAsGA1UECwwEdGVjaDERMA8GA1UEBwwIU2hhbmdoYWkxEzARBgNV
+BAMMCnNvdWxhcHAuY24xHjAcBgkqhkiG9w0BCQEWD21pbmdAc291bGFwcC5jbjCB
+nzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAt3nUBi+DIdP6ljh/A+RBj/KF1/2a
+HXkI90W1ttwIv152lWMc1FD1BeCiaAtxJ6TbIYKv3nqEqR3xc57WE0G5a8UlCsNs
+PvCQk2zMP6XlXHrKAkfrSU+pjvDTl/Btnfl0NoMj94ZaY+Ld1OnXVH2Td9e9pnIc
+v51QSjs2bECzKN0CAwEAATANBgkqhkiG9w0BAQQFAAOCAQEASBgKnvh0glhcKOaR
+88TgdxLeg0qJTXkxHFNK3lHQaAAHC45epezHJb9PSa7Ceu4dxnbYvMmxBKgtUDvY
+7wR3YyGX8VceQDNMejY2t4EiyYLShrL20NdMwrntITTVlX++TkeLFxv201PJZ8ao
+/QhesGg7yXQu0RQe1jacOQ0aAI81x1Xu9ivp028FdOPwqtViXu5ftWihusEmQFNa
+QhzerAxECCjI4O7eWQL30t0P/NREA3HY/4xugY0YHlITK61M/fXoHQYL2kzwgl0Q
+cvxU9sN6mf7GY6ltz3ckPicciQ88zo+gB830NLKrI5kcCQjCO4DCFL6wryFu24gw
+3acUyA==
+-----END CERTIFICATE-----

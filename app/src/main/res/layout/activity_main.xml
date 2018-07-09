@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.riskreject.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/bg"/>
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="当前手机正在使用中..."
+        android:textSize="16sp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="紧急联系人："
+            android:textColor="#ff0000"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:id="@+id/et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789"
+            android:hint="请输入紧急联系人号码后点击确定"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:text=""
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设定安全时间(h)："
+            android:textColor="#ff0000"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:id="@+id/et2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789"
+            android:hint="建议输入8-24小时"
+            android:maxLength="2"
+            android:text=""
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设定短信内容："
+            android:textColor="#ff0000"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:id="@+id/et3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入危急时刻发送的消息"
+            android:maxLength="20"
+            android:text=""
+            android:inputType="text"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是否开启拨打电话："
+            android:textColor="#ff0000"
+            android:textSize="15sp"/>
+
+        <com.suke.widget.SwitchButton
+            android:id="@+id/switch_button"
+            app:sb_show_indicator="false"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.lai.library.ButtonStyle
+            android:id="@+id/confirm"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/check_border"
+            android:onClick="btnClick"
+            android:text="确定"
+            android:textColor="#ffffff"
+            app:corner="5dp"
+            app:press_color="@android:color/darker_gray"
+            app:type="ok"/>
+
+        <com.lai.library.ButtonStyle
+            android:id="@+id/jumpSetting"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/check_border"
+            android:padding="5dp"
+            android:text="跳转应用权限设置"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            app:corner="5dp"
+            app:press_color="@android:color/darker_gray"
+            app:type="warning"/>
+
+        <com.lai.library.ButtonStyle
+            android:id="@+id/jumpWhite"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/check_border"
+            android:text="开启白名单"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:corner="5dp"
+            app:press_color="@android:color/darker_gray"
+            app:type="error"/>
+    </LinearLayout>
+
+</LinearLayout>
