@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+    useLibrary 'org.apache.http.legacy'
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.example.administrator.riskreject"
@@ -27,11 +28,34 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
+    compile('com.squareup.retrofit2:retrofit:2.1.0')
+            { exclude group: 'com.squareup.okhttp3' }
+    compile('com.squareup.retrofit2:converter-gson:2.1.0')
+            { exclude group: 'com.google.code.gson'
+                exclude group: 'com.squareup.okhttp3' }
+    compile('com.squareup.retrofit2:adapter-rxjava:2.1.0')
+            { exclude group: 'io.reactivex'
+                exclude group: 'com.squareup.okhttp3' }
 
-    compile 'com.zhy:okhttputils:2.6.2'
+    provided 'com.squareup.okhttp3:okhttp:3.2.0'
+
     compile 'me.weyye.hipermission:library:1.0.7'
     compile 'com.xdandroid:hellodaemon:+'
     compile 'com.lai:buttonStyle:1.0.2'
     compile 'com.github.zcweng:switch-button:0.0.3@aar'
+
+
+    //以下SDK开发者请根据需要自行选择
+    //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
+    //3.5.5：请务必查看下面注释[1]
+    compile 'cn.bmob.android:bmob-sdk:3.6.3'
+
+    //bmob-push：Bmob的推送包
+    compile 'cn.bmob.android:bmob-push:0.8'
+
+    //bmob-im：Bmob的即时通讯包，注意每个版本的im依赖特定版本的bmob-sdk，具体的依赖关系可查看下面注释[2]
+    compile 'cn.bmob.android:bmob-im:2.1.0@aar'
+
+    //如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)
+    compile 'cn.bmob.android:http-legacy:1.0'
 }
