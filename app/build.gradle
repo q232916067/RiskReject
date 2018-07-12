@@ -38,8 +38,7 @@ dependencies {
                 exclude group: 'com.squareup.okhttp3' }
 
     provided 'com.squareup.okhttp3:okhttp:3.2.0'
-
-    compile 'me.weyye.hipermission:library:1.0.7'
+    compile 'com.hjq:xxpermissions:1.5'
     compile 'com.xdandroid:hellodaemon:+'
     compile 'com.lai:buttonStyle:1.0.2'
     compile 'com.github.zcweng:switch-button:0.0.3@aar'

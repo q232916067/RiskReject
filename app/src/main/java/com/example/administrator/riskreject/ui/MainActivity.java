@@ -1,6 +1,5 @@
 package com.example.administrator.riskreject.ui;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -24,18 +23,25 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.administrator.riskreject.GitHubApi;
 import com.example.administrator.riskreject.R;
+import com.hjq.permissions.OnPermission;
+import com.hjq.permissions.Permission;
+import com.hjq.permissions.XXPermissions;
 import com.suke.widget.SwitchButton;
 import com.xdandroid.hellodaemon.IntentWrapper;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.update.BmobUpdateAgent;
-import me.weyye.hipermission.HiPermission;
-import me.weyye.hipermission.PermissionCallback;
-import me.weyye.hipermission.PermissionItem;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView textView;
@@ -120,9 +126,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //自动更新
         BmobUpdateAgent.update(this);
 
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://fanyi.youdao.com/") //设置网络请求的Url地址
+                .addConverterFactory(GsonConverterFactory.create()) //设置数据解析器
+                .build();
+        GitHubApi request = retrofit.create(GitHubApi.class);
 
+        Call<ResponseBody> userInfo = request.getUserInfo();
+        userInfo.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    int aaa = Log.d("aaa", ""+response.body().string());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
 
-
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                int aaa = Log.d("aaa", ""+t.toString());
+            }
+        });
     }
 
     private void isShowResetDialog() {
@@ -147,39 +172,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void SmscheckPermission() {
-        List<PermissionItem> permissionItems = new ArrayList<PermissionItem>();
-        permissionItems.add(new PermissionItem(Manifest.permission.SEND_SMS, "发送短信", R.drawable.permission_ic_sms));
-        permissionItems.add(new PermissionItem(Manifest.permission.CALL_PHONE, "拨打电话", R.drawable.permission_ic_phone));
-        permissionItems.add(new PermissionItem(Manifest.permission.READ_PHONE_STATE, "获取手机状态", R.drawable.permission_ic_phone));
-        permissionItems.add(new PermissionItem(Manifest.permission.WRITE_EXTERNAL_STORAGE, "写入手机存储", R.drawable.permission_ic_storage));
-        permissionItems.add(new PermissionItem(Manifest.permission.READ_EXTERNAL_STORAGE, "读取手机存储", R.drawable.permission_ic_storage));
-        permissionItems.add(new PermissionItem(Manifest.permission.WAKE_LOCK));
-        HiPermission.create(MainActivity.this)
-                .title("检测权限")
-                .permissions(permissionItems)
-                .msg("获取发送短信权限")
-                .animStyle(R.style.PermissionAnimScale)
-                .style(R.style.PermissionDefaultBlueStyle)
-                .checkMutiPermission(new PermissionCallback() {
+        XXPermissions.with(this)
+                .permission(Permission.Group.STORAGE)
+                .permission(Permission.Group.LOCATION)
+                .permission(Permission.Group.PHONE)
+                .permission(Permission.Group.SMS)
+                .permission(Permission.Group.SENSORS)
+                .request(new OnPermission() {
+
                     @Override
-                    public void onClose() {
-                        Log.i(TAG, "onClose");
-                        showToast("用户关闭权限申请");
+                    public void hasPermission(List<String> granted, boolean isAll) {
+
                     }
 
                     @Override
-                    public void onFinish() {
-//                        showToast("所有权限申请完成");
-                    }
+                    public void noPermission(List<String> denied, boolean quick) {
 
-                    @Override
-                    public void onDeny(String permission, int position) {
-                        Log.i(TAG, "onDeny");
-                    }
-
-                    @Override
-                    public void onGuarantee(String permission, int position) {
-                        Log.i(TAG, "onGuarantee");
                     }
                 });
     }
