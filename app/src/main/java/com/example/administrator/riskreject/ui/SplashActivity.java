@@ -1,5 +1,6 @@
 package com.example.administrator.riskreject.ui;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -26,6 +27,7 @@ import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.DownloadFileListener;
 import cn.bmob.v3.listener.FindListener;
+import me.weyye.hipermission.HiPermission;
 
 public class SplashActivity extends AppCompatActivity {
     private static final int START_ACTIVITY = 0x1;
@@ -65,7 +67,14 @@ public class SplashActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        queryData();
+
+        if(HiPermission.checkPermission(this, Manifest.permission.READ_PHONE_STATE)){
+            queryData();
+        }
+
+
+
+
     }
 
 

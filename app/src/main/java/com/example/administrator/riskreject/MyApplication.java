@@ -1,10 +1,16 @@
 package com.example.administrator.riskreject;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.xdandroid.hellodaemon.DaemonEnv;
 
+import cn.bmob.push.BmobPush;
 import cn.bmob.v3.Bmob;
+import cn.bmob.v3.BmobInstallation;
+import cn.bmob.v3.BmobInstallationManager;
+import cn.bmob.v3.InstallationListener;
+import cn.bmob.v3.exception.BmobException;
 
 /**
  * Created by Administrator on 2018/7/7.
@@ -39,5 +45,18 @@ public class MyApplication extends Application {
         //Bmob.initialize(config);
 
 //        BmobUpdateAgent.initAppVersion();
+        // 使用推送服务时的初始化操作
+        BmobInstallationManager.getInstance().initialize(new InstallationListener<BmobInstallation>() {
+            @Override
+            public void done(BmobInstallation bmobInstallation, BmobException e) {
+                if (e == null) {
+                    Log.d("MyApplication", (bmobInstallation.getObjectId() + "-" + bmobInstallation.getInstallationId()));
+                } else {
+                    Log.d("MyApplication", e.getMessage());
+                }
+            }
+        });
+// 启动推送服务
+        BmobPush.startWork(this);
     }
 }

@@ -119,6 +119,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         isShowResetDialog();
         //自动更新
         BmobUpdateAgent.update(this);
+
+
+
+
     }
 
     private void isShowResetDialog() {
